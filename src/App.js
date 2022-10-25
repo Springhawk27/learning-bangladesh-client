@@ -1,10 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './Pages/Shared/Header/Header';
 
 function App() {
   return (
-    <div className="App">
-      <h3 className="text-orange-300">Hi there</h3>
+    <div className="">
+      <Header></Header>
+
     </div>
   );
 }
