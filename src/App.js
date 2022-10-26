@@ -1,10 +1,12 @@
+import { RouterProvider } from 'react-router-dom';
 import './App.css';
-import Header from './Pages/Shared/Header/Header';
+import { routes } from './Routes/Routes/Routes';
 
 function App() {
   return (
     <div className="">
-      <Header></Header>
+      <RouterProvider router={routes}>
+      </RouterProvider>
 
     </div>
   );
