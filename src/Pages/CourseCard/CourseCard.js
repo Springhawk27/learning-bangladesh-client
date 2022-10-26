@@ -14,7 +14,7 @@ const CourseCard = ({ course }) => {
             <div className="mt-2 text-left">
                 <h2 className="text-gray-900 title-font text-lg font-medium">{name}</h2>
                 <p className="mt-1">${price}</p>
-                <Link to={`/checkout/${id}`} className="flex justify-start mt-2">
+                <Link to={`/course/${id}`} className="flex justify-start mt-2">
                     < button className="inline-flex text-white bg-blue-900 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">
                         Buy Now</button>
                 </Link>
