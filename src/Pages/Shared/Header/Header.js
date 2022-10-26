@@ -29,7 +29,7 @@ const Header = () => {
                             fontWeight: "bold",
                             color: "#48BB78"
                         }}
-                        to="/Courses"
+                        to="/courses"
                         className="mr-5 hover:text-green-700">Courses</Link>
                     <Link
                         activeStyle={{
