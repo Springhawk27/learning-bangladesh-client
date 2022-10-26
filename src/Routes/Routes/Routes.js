@@ -17,26 +17,26 @@ export const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/courses'),
+                loader: () => fetch('https://learning-bangladesh-server.vercel.app/courses'),
 
             },
 
             {
                 path: '/courses',
                 element: <Courses></Courses>,
-                loader: () => fetch('http://localhost:5000/courses'),
+                loader: () => fetch('https://learning-bangladesh-server.vercel.app/courses'),
             },
 
             {
                 path: '/category/:id',
                 element: <Courses></Courses>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({ params }) => fetch(`https://learning-bangladesh-server.vercel.app/category/${params.id}`)
 
             },
             {
                 path: '/course/:id',
                 element: <CourseDetail></CourseDetail>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({ params }) => fetch(`https://learning-bangladesh-server.vercel.app/course/${params.id}`)
 
             },
             {
