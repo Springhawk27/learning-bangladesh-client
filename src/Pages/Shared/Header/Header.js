@@ -36,8 +36,15 @@ const Header = () => {
                             fontWeight: "bold",
                             color: "#48BB78"
                         }}
-                        to="/accessories"
-                        className="mr-5 hover:text-green-700">Accessories</Link>
+                        to="/faq"
+                        className="mr-5 hover:text-green-700">FAQ</Link>
+                    <Link
+                        activeStyle={{
+                            fontWeight: "bold",
+                            color: "#48BB78"
+                        }}
+                        to="/blog"
+                        className="mr-5 hover:text-green-700">Blog</Link>
 
                     <Flowbite>
                         <DarkThemeToggle />
