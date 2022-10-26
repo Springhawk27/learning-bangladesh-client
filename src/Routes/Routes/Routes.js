@@ -2,9 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import Login from "../../Login/Login/Login";
 import Register from "../../Login/Register/Register";
+import NotFound from "../../Others/NotFound/NotFound";
 import CourseDetail from "../../Pages/CourseDetail/CourseDetail";
 import Courses from "../../Pages/Courses/Courses";
-import CoursesSidebar from "../../Pages/CoursesSidebar/CoursesSidebar";
 import Home from "../../Pages/Home/Home";
 
 export const routes = createBrowserRouter([
@@ -46,6 +46,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '*',
+                element: <NotFound></NotFound>
             },
 
         ],

@@ -33,6 +33,16 @@ const Header = () => {
                         to="/blog"
                         className="mr-5 hover:text-blue-900">Blog</Link>
 
+                    <Link
+
+                        to="/login"
+                        className="mr-5 hover:text-blue-900">Login</Link>
+
+                    <Link
+
+                        to="/register"
+                        className="mr-5 hover:text-blue-900">Signup</Link>
+
 
 
                 </nav>
