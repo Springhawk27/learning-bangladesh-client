@@ -46,9 +46,6 @@ const Header = () => {
                         to="/blog"
                         className="mr-5 hover:text-green-700">Blog</Link>
 
-                    <Flowbite>
-                        <DarkThemeToggle />
-                    </Flowbite>
 
 
                 </nav>
