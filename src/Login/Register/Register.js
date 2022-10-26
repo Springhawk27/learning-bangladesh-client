@@ -1,30 +1,10 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../../contexts/AuthProvider/Authprovider';
-import { GoogleAuthProvider } from 'firebase/auth';
-import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Button, Label, TextInput } from 'flowbite-react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-
-const Login = () => {
-
-    const { providerLogin } = useContext(AuthContext);
-
-    const googleProvider = new GoogleAuthProvider()
-
-    const handleGoogleSignIn = () => {
-        providerLogin(googleProvider)
-            .then(result => {
-                const user = result.user;
-                console.log(user);
-            })
-            .catch(error => console.error(error))
-    }
+const Register = () => {
     return (
         <div>
-            <button onClick={handleGoogleSignIn} className='mb-2' variant="outline-primary"><FaGoogle></FaGoogle> Log In With Google</button>
-
             <form className="flex flex-col gap-4 w-3/5 mx-auto">
                 <div>
                     <div className="mb-2 block">
@@ -53,7 +33,7 @@ const Login = () => {
                         required={true}
                     />
                 </div>
-                <p>Don't have an account? <Link to='/register' className='text-blue-600'>Register</Link></p>
+                <p>Already have an account? <Link to='/login' className='text-blue-600'>Login</Link></p>
 
                 <Button type="submit">
                     Submit
@@ -63,4 +43,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
