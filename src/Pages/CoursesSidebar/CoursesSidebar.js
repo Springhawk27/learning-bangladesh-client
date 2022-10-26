@@ -1,6 +1,6 @@
 import { Sidebar } from 'flowbite-react';
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const CoursesSidebar = () => {
     // const categories = useLoaderData();
@@ -17,20 +17,24 @@ const CoursesSidebar = () => {
     return (
         <div className="sm:w-1/4 w-2/5 border-r-2">
             <Sidebar aria-label="Default sidebar example " className='sticky' style={{ top: "90px", textAlign: "left" }}>
-                <Sidebar.Items className='text-left'>
+                <Sidebar.Items >
                     <Sidebar.ItemGroup className='text-left'>
 
 
                         {
                             categories.map(category => {
                                 return (
-                                    <Sidebar.Item
+                                    <p className='bg-gray-50 py-2'
                                         key={category.id}
-                                        href="#"
-                                        className='bg-gray-50 text-left'
                                     >
-                                        {category.name}
-                                    </Sidebar.Item>
+                                        <Link
+                                            key={category.id}
+                                            to={`/category/${category.id}`}
+
+                                        >
+                                            {category.name}
+                                        </Link>
+                                    </p>
                                 )
                             })
                         }
