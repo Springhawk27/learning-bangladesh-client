@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from '../../../assets/logo.png';
-import { Avatar, DarkThemeToggle, Dropdown, Flowbite, Navbar } from 'flowbite-react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 const Header = () => {
@@ -10,7 +9,7 @@ const Header = () => {
 
         <header className=" body-font bg-gray-100 sticky top-0 z-50">
             <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-                <Link to="/home" className="flex title-font font-medium items-center  mb-4 md:mb-0">
+                <Link to="/" className="flex title-font font-medium items-center  mb-4 md:mb-0">
 
                     <img src={logo} alt="" style={{ width: '100px' }} />
 
@@ -18,33 +17,21 @@ const Header = () => {
                 </Link>
                 <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
                     <Link
-                        activeStyle={{
-                            fontWeight: "bold",
-                            color: "#48BB78"
-                        }}
+
                         to="/"
-                        className="mr-5 hover:text-green-700">Home</Link>
+                        className="mr-5 hover:text-blue-900">Home</Link>
                     <Link
-                        activeStyle={{
-                            fontWeight: "bold",
-                            color: "#48BB78"
-                        }}
+
                         to="/courses"
-                        className="mr-5 hover:text-green-700">Courses</Link>
+                        className="mr-5 hover:text-blue-900">Courses</Link>
                     <Link
-                        activeStyle={{
-                            fontWeight: "bold",
-                            color: "#48BB78"
-                        }}
+
                         to="/faq"
-                        className="mr-5 hover:text-green-700">FAQ</Link>
+                        className="mr-5 hover:text-blue-900">FAQ</Link>
                     <Link
-                        activeStyle={{
-                            fontWeight: "bold",
-                            color: "#48BB78"
-                        }}
+
                         to="/blog"
-                        className="mr-5 hover:text-green-700">Blog</Link>
+                        className="mr-5 hover:text-blue-900">Blog</Link>
 
 
 
