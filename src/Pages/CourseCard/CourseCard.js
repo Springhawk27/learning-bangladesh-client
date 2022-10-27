@@ -6,7 +6,7 @@ import { Rating } from 'flowbite-react';
 
 const CourseCard = ({ course }) => {
     const { name, img, price, id, rating } = course;
-    console.log(course);
+    // console.log(course);
     return (
 
 

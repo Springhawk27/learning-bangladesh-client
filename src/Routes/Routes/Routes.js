@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import Login from "../../Login/Login/Login";
 import Register from "../../Login/Register/Register";
+import Blog from "../../Others/Blog/Blog";
+import Faq from "../../Others/FAQ/Faq";
 import NotFound from "../../Others/NotFound/NotFound";
 import Checkout from "../../Pages/Checkout/Checkout";
 import CourseDetail from "../../Pages/CourseDetail/CourseDetail";
@@ -47,6 +49,14 @@ export const routes = createBrowserRouter([
                 element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://learning-bangladesh-server.vercel.app/checkout/${params.id}`)
 
+            },
+            {
+                path: '/faq',
+                element: <Faq></Faq>
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
             },
             {
                 path: '/login',

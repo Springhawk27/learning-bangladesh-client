@@ -46,7 +46,7 @@ const AuthProvider = ({ children }) => {
             console.log('inside auth state change', currentUser);
             // setUser(currentUser);
             // verify email
-            if (currentUser === null || currentUser.emailVerified) {
+            if (currentUser === null || currentUser.uid) {
                 setUser(currentUser);
             }
             setLoading(false);

@@ -18,9 +18,9 @@ const Register = () => {
     // const [accepted, setAccepted] = useState(false);
 
     const navigate = useNavigate();
-    // const location = useLocation();
+    const location = useLocation();
 
-    const from = '/';
+    const from = location.state?.from?.pathname || '/';
 
 
     const handleSubmit = event => {
@@ -39,12 +39,15 @@ const Register = () => {
                 console.log(user);
                 setError('');
                 form.reset();
-                handleUpdateUserProfile(name, photoURL);
-                // email verification
-                handleEmailVerification()
-                toast.success('Please verify your email address first.')
 
-                // setLoading(true);
+                setLoading(true);
+
+                handleUpdateUserProfile(name, photoURL);
+
+                // email verification
+                // handleEmailVerification()
+                // toast.success('Please verify your email address first.')
+
                 navigate(from, { replace: true });
 
                 // if (user?.emailVerified) {
@@ -73,11 +76,11 @@ const Register = () => {
     }
 
     // email verification
-    const handleEmailVerification = () => {
-        verifyEmail()
-            .then(() => { })
-            .catch(error => console.error(error));
-    }
+    // const handleEmailVerification = () => {
+    //     verifyEmail()
+    //         .then(() => { })
+    //         .catch(error => console.error(error));
+    // }
 
 
     // const handleAccepted = event => {
@@ -85,19 +88,22 @@ const Register = () => {
     // }
 
 
-
-
     const handleGoogleSignIn = () => {
         providerLogin(googleProvider)
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                if (user?.emailVerified) {
-                    navigate(from, { replace: true });
-                }
-                else {
-                    toast.error('Your email is not verified. Please verify your email address.')
-                }
+
+                setLoading(true)
+                navigate(from, { replace: true });
+
+                // if (user?.emailVerified) {
+                //     navigate(from, { replace: true });
+                // }
+                // else {
+                //     toast.error('Your email is not verified. Please verify your email address.')
+                // }
+
             })
             .catch(error => setError(error.message))
             .finally(() => {
@@ -109,14 +115,18 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+
+                setLoading(true)
+                navigate(from, { replace: true });
+
                 // email verification
-                if (user?.emailVerified) {
-                    navigate(from, { replace: true });
-                }
-                else {
-                    handleEmailVerification()
-                    toast.success('Please verify your email address.')
-                }
+                // if (user?.emailVerified) {
+                //     navigate(from, { replace: true });
+                // }
+                // else {
+                //     handleEmailVerification()
+                //     toast.success('Please verify your email address.')
+                // }
 
             })
             .catch(error => setError(error.message))

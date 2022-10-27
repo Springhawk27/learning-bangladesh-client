@@ -37,17 +37,18 @@ const Login = () => {
                 form.reset();
                 setError('');
                 // navigate('/');
+
                 setLoading(true);
-                // navigate(from, { replace: true });
+                navigate(from, { replace: true });
+
                 // email verification
+                // if (user?.emailVerified) {
+                //     navigate(from, { replace: true });
+                // }
 
-                if (user?.emailVerified) {
-                    navigate(from, { replace: true });
-                }
-
-                else {
-                    toast.error('Your email is not verified. Please verify your email address.')
-                }
+                // else {
+                //     toast.error('Your email is not verified. Please verify your email address.')
+                // }
             })
             .catch(error => {
                 console.error(error)
@@ -64,12 +65,17 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                if (user?.emailVerified) {
-                    navigate(from, { replace: true });
-                }
-                else {
-                    toast.error('Your email is not verified. Please verify your email address.')
-                }
+                setLoading(true);
+                navigate(from, { replace: true });
+
+
+                // if (user?.emailVerified) {
+                //     navigate(from, { replace: true });
+                // }
+                // else {
+                //     toast.error('Your email is not verified. Please verify your email address.')
+                // }
+
             })
             .catch(error => setError(error.message))
             .finally(() => {
@@ -81,14 +87,17 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                setLoading(true);
+                navigate(from, { replace: true });
+
                 // email verification
-                if (user?.emailVerified) {
-                    navigate(from, { replace: true });
-                }
-                else {
-                    handleEmailVerification()
-                    toast.success('Please verify your email address.')
-                }
+                // if (user?.emailVerified) {
+                //     navigate(from, { replace: true });
+                // }
+                // else {
+                //     handleEmailVerification()
+                //     toast.success('Please verify your email address.')
+                // }
 
             })
             .catch(error => setError(error.message))
@@ -98,11 +107,11 @@ const Login = () => {
     }
 
     // email verification
-    const handleEmailVerification = () => {
-        verifyEmail()
-            .then(() => { })
-            .catch(error => console.error(error));
-    }
+    // const handleEmailVerification = () => {
+    //     verifyEmail()
+    //         .then(() => { })
+    //         .catch(error => console.error(error));
+    // }
 
     return (
         <div>
