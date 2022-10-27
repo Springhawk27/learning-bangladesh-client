@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import logo from '../../../assets/logo.png';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/Authprovider';
-import { Button, Tooltip } from 'flowbite-react';
+import { Button, DarkThemeToggle, Flowbite, Tooltip } from 'flowbite-react';
 import { FaUser } from 'react-icons/fa';
 
 
@@ -17,8 +17,7 @@ const Header = () => {
     }
     return (
 
-
-        <header className=" body-font bg-gray-100 sticky top-0 z-50">
+        <header className=" body-font bg-gray-100  sticky top-0 z-50">
             <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
                 <Link to="/" className="flex title-font font-medium items-center  mb-4 md:mb-0">
 
@@ -43,6 +42,8 @@ const Header = () => {
 
                         to="/blog"
                         className="mr-5 hover:text-blue-900">Blog</Link>
+
+                    {/* <DarkThemeToggle /> */}
 
                     <>
                         {
@@ -88,6 +89,7 @@ const Header = () => {
 
             </div>
         </header>
+
 
 
 
