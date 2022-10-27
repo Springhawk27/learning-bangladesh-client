@@ -125,7 +125,7 @@ const Register = () => {
                 <Button type="submit">
                     Submit
                 </Button>
-                <p className="text-danger d-block">
+                <p className="text-red-500 d-block my-2">
                     {error}
                 </p>
             </form>
