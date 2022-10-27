@@ -68,7 +68,7 @@ const CourseDetail = () => {
                     </div>
                 </div>
             </div>
-            <p className='mb-4 text-center flex w-2/4 mx-auto'>
+            <p className='mb-4 mt-4 text-center flex w-2/4 mx-auto'>
                 <Link
                     to={`/checkout/${id}`}
                     className=" text-white bg-blue-900 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded w-full text-center  ">Buy This Course</Link>
