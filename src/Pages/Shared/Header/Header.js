@@ -1,12 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import logo from '../../../assets/logo.png';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/Authprovider';
-import { Button, DarkThemeToggle, Flowbite, Tooltip } from 'flowbite-react';
+import { Button, Tooltip } from 'flowbite-react';
 import { FaUser } from 'react-icons/fa';
 
 
 const Header = () => {
+
+    const [theme, setTheme] = useState(false)
+    // console.log(theme)
 
     const { user, logOut } = useContext(AuthContext);
 
@@ -17,7 +20,7 @@ const Header = () => {
     }
     return (
 
-        <header className=" body-font bg-gray-100  sticky top-0 z-50">
+        <header className={`body-font bg-gray-100  sticky top-0 z-50 ${theme === true ? "bg-gray-100" : theme === false ? "bg-blue-300" : "bg-red-100"}`} >
             <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
                 <Link to="/" className="flex title-font font-medium items-center  mb-4 md:mb-0">
 
@@ -43,7 +46,22 @@ const Header = () => {
                         to="/blog"
                         className="mr-5 hover:text-blue-900">Blog</Link>
 
-                    {/* <DarkThemeToggle /> */}
+                    <div className="flex flex-wrap gap-2">
+
+                        <div>
+                            <Button
+                                color="light"
+                                pill={true}
+                                onClick={() => {
+                                    setTheme(theme === false ? true : theme === true ? false : true)
+                                }}
+                            >
+                                Theme
+                            </Button>
+                        </div>
+                    </div>
+
+
 
                     <>
                         {
