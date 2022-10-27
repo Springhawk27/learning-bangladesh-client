@@ -3,6 +3,7 @@ import Main from "../../layout/Main";
 import Login from "../../Login/Login/Login";
 import Register from "../../Login/Register/Register";
 import NotFound from "../../Others/NotFound/NotFound";
+import Checkout from "../../Pages/Checkout/Checkout";
 import CourseDetail from "../../Pages/CourseDetail/CourseDetail";
 import Courses from "../../Pages/Courses/Courses";
 import Home from "../../Pages/Home/Home";
@@ -40,6 +41,12 @@ export const routes = createBrowserRouter([
 
             },
             {
+                path: '/checkout/:id',
+                element: <Checkout></Checkout>,
+                loader: ({ params }) => fetch(`https://learning-bangladesh-server.vercel.app/checkout/${params.id}`)
+
+            },
+            {
                 path: '/login',
                 element: <Login></Login>
             },
@@ -51,6 +58,7 @@ export const routes = createBrowserRouter([
                 path: '*',
                 element: <NotFound></NotFound>
             },
+
 
         ],
 

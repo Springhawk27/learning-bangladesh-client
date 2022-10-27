@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { AiFillStar } from 'react-icons/ai';
 
 
@@ -8,7 +8,7 @@ const CourseDetail = () => {
 
     const course = useLoaderData();
     console.log(course)
-    const { name, price, img, rating, description, duration } = course;
+    const { id, name, price, img, rating, description, duration } = course;
 
     return (
         <section className="text-gray-600 body-font overflow-hidden">
@@ -33,7 +33,9 @@ const CourseDetail = () => {
                         <p className="leading-relaxed">{description}</p>
 
 
-                        <button className=" text-white bg-blue-900 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded w-full mt-2 text-center">Buy This Course</button>
+                        <Link
+                            to={`/checkout/${id}`}
+                            className=" text-white bg-blue-900 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded w-full mt-2 text-center">Buy This Course</Link>
 
                     </div>
                 </div>
