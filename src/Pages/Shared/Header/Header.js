@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../../assets/logo.png';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider/Authprovider';
+import { Button, Tooltip } from 'flowbite-react';
+import { FaUser } from 'react-icons/fa';
 
 
 const Header = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
     return (
 
 
@@ -33,18 +44,45 @@ const Header = () => {
                         to="/blog"
                         className="mr-5 hover:text-blue-900">Blog</Link>
 
-                    <Link
+                    <>
+                        {
+                            user?.uid ?
+                                <>
+                                    <span className='mr-4 sm:ml-12 ml-4'>{user?.displayName}</span>
+                                    <Button variant="light" onClick={handleLogOut}>Log out</Button>
+                                </>
+                                :
+                                <>
+                                    <Link
+                                        to='/login'
+                                        className="mr-2 "
+                                    >Login</Link>
+                                    <Link to='/register'
+                                        className="mr-2 "
+                                    >Register</Link>
+                                </>
+                        }
+                    </>
 
-                        to="/login"
-                        className="mr-5 hover:text-blue-900">Login</Link>
+                    <Tooltip
+                        content={user?.displayName ? `Hello, ${user?.displayName} ` : "Hello"}
+                        animation="duration-500"
+                        placement="left"
+                    >
+                        {/* <Button> */}
+                        <Link to="/profile">
+                            {user?.photoURL ?
+                                <img
+                                    className="ml-4 h-8 w-8 rounded-full shadow-lg"
+                                    src={user?.photoURL}
+                                    alt="profile">
+                                </img>
 
-                    <Link
-
-                        to="/register"
-                        className="mr-5 hover:text-blue-900">Signup</Link>
-
-
-
+                                : <FaUser></FaUser>
+                            }
+                        </Link>
+                        {/* </Button> */}
+                    </Tooltip>
                 </nav>
 
 
