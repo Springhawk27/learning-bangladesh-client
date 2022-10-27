@@ -7,6 +7,7 @@ import Checkout from "../../Pages/Checkout/Checkout";
 import CourseDetail from "../../Pages/CourseDetail/CourseDetail";
 import Courses from "../../Pages/Courses/Courses";
 import Home from "../../Pages/Home/Home";
+import Profile from "../../Pages/Profile/Profile";
 
 export const routes = createBrowserRouter([
     {
@@ -53,6 +54,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/profile',
+                element: <Profile></Profile>
             },
             {
                 path: '*',

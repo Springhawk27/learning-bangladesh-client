@@ -17,7 +17,7 @@ const CourseDetail = () => {
                     <img alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-contain object-center rounded" src={img} />
                     <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
 
-                        <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{name}</h1>
+                        <h1 className="text-blue-900 text-2xl title-font font-medium mb-1 ">{name}</h1>
                         <h2 className="text-sm title-font text-gray-500 tracking-widest">Course Duration: {duration}</h2>
                         <div className="flex mb-4">
                             <span className="flex items-center">
@@ -26,16 +26,18 @@ const CourseDetail = () => {
 
                                 <span className="text-gray-600 ml-3">{rating.number}</span>
                             </span>
-                            <span className="flex ml-3 pl-3 py-2 border-l-2 border-gray-200 space-x-2s">
+                            <span className="flex ml-3 pl-3 py-2 border-l-2 border-gray-200 space-x-2s text-red-600">
                                 ${price}
                             </span>
                         </div>
                         <p className="leading-relaxed">{description}</p>
 
 
-                        <Link
-                            to={`/checkout/${id}`}
-                            className=" text-white bg-blue-900 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded w-full mt-2 text-center">Buy This Course</Link>
+                        <p className='mt-4'>
+                            <Link
+                                to={`/checkout/${id}`}
+                                className=" text-white bg-blue-900 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded w-full text-center ">Buy This Course</Link>
+                        </p>
 
                     </div>
                 </div>
