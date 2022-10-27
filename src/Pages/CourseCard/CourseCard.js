@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { AiFillStar } from 'react-icons/ai';
-import { Rating } from 'flowbite-react';
 
 
 const CourseCard = ({ course }) => {

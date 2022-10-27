@@ -5,7 +5,7 @@ import { NavLink, useLoaderData } from 'react-router-dom';
 const Checkout = () => {
     const course = useLoaderData();
     console.log(course)
-    const { id, name, price, img, rating, description, duration } = course;
+    const {  name, price, rating, description, duration } = course;
 
     return (
         <div>

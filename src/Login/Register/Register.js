@@ -1,6 +1,5 @@
 import { Button, Label, TextInput } from 'flowbite-react';
 import React, { useContext, useState } from 'react';
-import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/Authprovider';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -9,7 +8,7 @@ import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 const Register = () => {
     const [error, setError] = useState('');
-    const { createUser, updateUserProfile, verifyEmail, providerLogin, setLoading } = useContext(AuthContext);
+    const { createUser, updateUserProfile, providerLogin, setLoading } = useContext(AuthContext);
 
 
     const googleProvider = new GoogleAuthProvider()
@@ -40,14 +39,13 @@ const Register = () => {
                 setError('');
                 form.reset();
 
-                setLoading(true);
 
                 handleUpdateUserProfile(name, photoURL);
 
                 // email verification
                 // handleEmailVerification()
                 // toast.success('Please verify your email address first.')
-
+                setLoading(true);
                 navigate(from, { replace: true });
 
                 // if (user?.emailVerified) {

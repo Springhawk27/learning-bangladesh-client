@@ -1,6 +1,6 @@
 import { Sidebar } from 'flowbite-react';
 import React, { useEffect, useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const CoursesSidebar = () => {
     // const categories = useLoaderData();

@@ -4,13 +4,12 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Button, Label, TextInput } from 'flowbite-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import toast from 'react-hot-toast';
 
 
 
 const Login = () => {
 
-    const { providerLogin, verifyEmail } = useContext(AuthContext);
+    const { providerLogin } = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider();

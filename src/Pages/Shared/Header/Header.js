@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import logo from '../../../assets/logo.png';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/Authprovider';
 import { Button, Tooltip } from 'flowbite-react';
 import { FaUser } from 'react-icons/fa';
