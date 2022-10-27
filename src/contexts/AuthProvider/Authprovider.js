@@ -32,6 +32,7 @@ const AuthProvider = ({ children }) => {
     }
     // email verification
     const verifyEmail = () => {
+        setLoading(true);
         return sendEmailVerification(auth.currentUser);
     }
 

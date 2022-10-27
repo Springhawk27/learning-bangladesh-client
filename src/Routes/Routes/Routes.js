@@ -8,6 +8,7 @@ import CourseDetail from "../../Pages/CourseDetail/CourseDetail";
 import Courses from "../../Pages/Courses/Courses";
 import Home from "../../Pages/Home/Home";
 import Profile from "../../Pages/Profile/Profile";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -43,7 +44,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/checkout/:id',
-                element: <Checkout></Checkout>,
+                element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://learning-bangladesh-server.vercel.app/checkout/${params.id}`)
 
             },

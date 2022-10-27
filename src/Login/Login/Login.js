@@ -37,12 +37,14 @@ const Login = () => {
                 form.reset();
                 setError('');
                 // navigate('/');
-
+                setLoading(true);
                 // navigate(from, { replace: true });
                 // email verification
-                if (user.emailVerified) {
+
+                if (user?.emailVerified) {
                     navigate(from, { replace: true });
                 }
+
                 else {
                     toast.error('Your email is not verified. Please verify your email address.')
                 }
@@ -62,8 +64,17 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                if (user?.emailVerified) {
+                    navigate(from, { replace: true });
+                }
+                else {
+                    toast.error('Your email is not verified. Please verify your email address.')
+                }
             })
-            .catch(error => console.error(error))
+            .catch(error => setError(error.message))
+            .finally(() => {
+                setLoading(false);
+            })
     }
     const handleGithubSignIn = () => {
         providerLogin(githubProvider)
@@ -71,11 +82,19 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 // email verification
-                handleEmailVerification()
-                toast.success('Please verify your email address.')
+                if (user?.emailVerified) {
+                    navigate(from, { replace: true });
+                }
+                else {
+                    handleEmailVerification()
+                    toast.success('Please verify your email address.')
+                }
 
             })
-            .catch(error => console.error(error))
+            .catch(error => setError(error.message))
+            .finally(() => {
+                setLoading(false);
+            })
     }
 
     // email verification
@@ -99,7 +118,7 @@ const Login = () => {
                     <TextInput
                         id="email"
                         type="email"
-                        placeholder="name@flowbite.com"
+                        placeholder="name@mail.com"
                         required={true}
                     />
                 </div>
