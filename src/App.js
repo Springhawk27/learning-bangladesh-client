@@ -14,7 +14,7 @@ function App() {
 
       <RouterProvider router={routes}>
       </RouterProvider>
-      <Toaster></Toaster>
+      {/* <Toaster></Toaster> */}
     </div>
   );
 }

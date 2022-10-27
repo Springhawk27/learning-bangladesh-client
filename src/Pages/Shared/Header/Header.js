@@ -20,7 +20,7 @@ const Header = () => {
     }
     return (
 
-        <header className={`body-font bg-gray-100  sticky top-0 z-50 ${theme === true ? "bg-gray-100" : theme === false ? "bg-blue-300" : "bg-red-100"}`} >
+        <header className={`body-font bg-gray-100  sticky top-0 z-10 ${theme === true ? "bg-gray-100" : theme === false ? "bg-blue-300" : "bg-red-100"}`} >
             <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
                 <Link to="/" className="flex title-font font-medium items-center  mb-4 md:mb-0">
 
